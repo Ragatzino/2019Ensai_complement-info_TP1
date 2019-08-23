@@ -1,4 +1,4 @@
-from dao.davenger_book import DaoAvenger
+from dao.avenger_dao import DaoAvenger
 from business_object.avenger import Avenger
 from connection import connection
 
