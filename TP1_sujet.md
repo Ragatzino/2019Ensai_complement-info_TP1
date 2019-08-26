@@ -37,12 +37,12 @@ identifiant), et dans votre base (qui a pour nom votre identifiant),
 exécutez le contenu du fichier create_avengers.sql Maintenant que vous
 avez créé votre table book vous pouvez y insérer des avengers.
 
-Installez psycopg2pour pouvoir se connecter et consulter votre base de
+Installez psycopg2 pour pouvoir se connecter et consulter votre base de
 donnée. Vous pouvez retrouver la documentation de psycopg2 ici :
 http://initd.org/psycopg
 
 ```bash
-pip install psycopg2-binary --user --proxy http://pxcache-02.ensai.fr:3128
+pip install psycopg2 --user --proxy http://pxcache-02.ensai.fr:3128
 ```
 
 Lancez le programme main.py Dans la console, vous devez voir qu’un

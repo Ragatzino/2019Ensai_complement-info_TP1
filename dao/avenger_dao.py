@@ -1,8 +1,8 @@
-from connection import connection
+from dao.abstract_dao import AbstractDao
 from business_object.avenger import Avenger
 
 
-class DaoAvenger:
+class DaoAvenger(AbstractDao):
 
     def create(self, avenger):
         """
@@ -10,7 +10,7 @@ class DaoAvenger:
         :param avenger:
         :return: l'avenger mis à jour de son id en base
         """
-        cur = connection.cursor()
+        cur = self.connection.cursor()
         try:
             cur.execute(
                 "INSERT INTO avengers (name, alias, power) VALUES (%s, %s, %s) RETURNING id;",
@@ -18,25 +18,25 @@ class DaoAvenger:
 
             avenger.id = cur.fetchone()[0]
             # la transaction est enregistrée en base
-            connection.commit()
+            self.connection.commit()
         except:
             # la transaction est annulée
-            connection.rollback()
+            self.connection.rollback()
             raise
         finally:
             cur.close()
 
         return avenger
 
-    def get_all_avengers(self):
+    def find_all(self):
         """
         :return: l'intégralité des avengers en base
         """
-        with connection.cursor() as cur:
+        with self.connection.cursor() as cur:
             cur.execute(
                 "select id, name, alias, power from avengers") # A votre avis pourquoi on fait pas select * from avengers ?
 
-            # on récupère des tuples et les transforme en objects Book
+            # on récupère des tuples et les transforme en objects Avengers
             result = [Avenger(id=item[0], name=item[2], alias=item[1], power=item[2])
                       for item in cur.fetchall()]
             return result
