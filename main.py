@@ -1,6 +1,5 @@
 from dao.avenger_dao import DaoAvenger
 from business_object.avenger import Avenger
-from connection import connection
 
 daoAvenger = DaoAvenger()
 
@@ -13,7 +12,7 @@ if __name__ == "__main__":
         print('------------------------------------------------\n')
         print("Avenger créé : ")
         print(created)
-        found = daoAvenger.get_all_avengers()
+        found = daoAvenger.find_all()
 
         print('\n------------------------------------------------\n')
         print("Avengers enregistrés : ")
@@ -21,4 +20,4 @@ if __name__ == "__main__":
 
     finally:
         # fermeture de la connexion avec la base
-        connection.close()
+        daoAvenger.connection.close()

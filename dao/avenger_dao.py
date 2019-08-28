@@ -40,3 +40,17 @@ class DaoAvenger(AbstractDao):
             result = [Avenger(id=item[0], name=item[2], alias=item[1], power=item[2])
                       for item in cur.fetchall()]
             return result
+
+    """
+    Avec le choix d'utiliser une classe abastraite dont héritent les différentes DAO, il est obligatoire de creer
+    toutes les méthodes abstraites dans les classes filles, même si on ne leur code aucun comportement pour le moment.
+    Si vous utiliser PyCharm, il peut créer la définition des méthodes automatiquement.
+    """
+    def find_by_id(self, id):
+        raise NotImplementedError
+
+    def update(self, business_object):
+        raise NotImplementedError
+
+    def delete(self, business_object):
+        raise NotImplementedError

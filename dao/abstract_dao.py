@@ -5,7 +5,11 @@ from connection import get_connection
 
 class AbstractDao(ABC):
     """Classe abstraite dont les DAO doivent hériter. Permet de gérer simplement la connection, et d'avoir des noms
-    méthodes de base des DAO identique. Permet une meilleure lisibilité du code"""
+    méthodes de base des DAO identique. Permet une meilleure lisibilité du code
+
+    !!! chaque classe qui hérite d'une classe abstraite doit implémenter toutes les méthodes décorées pas @abstracmethod
+    même si le corps de la méthode est un simple pass (PyCharm peut automatiquement faire cela pour vous)
+    """
 
     connection = get_connection()
 

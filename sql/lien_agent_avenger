@@ -1,6 +1,0 @@
-create table lien_avanger_agent(
-    agentId integer REFERENCES shield_agents(id),
-    avengerId integer REFERENCES avengers(id),
-    affinity integer default 0,
-    PRIMARY KEY(agentId, avengerId)
-);
