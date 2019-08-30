@@ -27,8 +27,18 @@ Notions secondaires :
 Pour récupére le code du TP vous allez utiliser Git. Git est un logiciel
 de versionnage et de partage de code source. Créez sur votre session un dossier "TP1-DAO", puis dans le dossier faites clic droit > Git Bash here. Cela va ouvrir un invite de commande git.
 
+** Une petite configuration préalable de git est à prévoir : 
+Proposition : Créez un dossier sur votre bureau appelé git_repositories
+              Utilisez bash : Démarrer -> Informatique -> Git -> Git Bash
+Ensuite : 
 Dans git bash saississez
 
+```git
+cd /C/Users/*votreId*/Desktop/git_repositories
+
+git config --global http.proxy http://pxcache-02.ensai.fr:3128
+```
+Vous venez de configurer votre git pour le proxy et vous allez êtes maintenant dans le dépot git repositories
 ```git
 git clone https://github.com/HealerMikado/2019Ensai_complement-info_TP1.git squelette-TP1
 
