@@ -24,7 +24,7 @@ Notions secondaires :
 
 ### Récupérer le code du TP
 
-Pour récupére le code du TP vous allez utiliser Git. Git est un logiciel
+Pour récupérer le code du TP vous allez utiliser Git. Git est un logiciel
 de versionnage et de partage de code source. Créez sur votre session un dossier "TP1-DAO", puis dans le dossier faites clic droit > Git Bash here. Cela va ouvrir un invite de commande git.
 
 ** Une petite configuration préalable de git est à prévoir : 
@@ -38,6 +38,9 @@ cd /C/Users/*votreId*/Desktop/git_repositories
 
 git config --global http.proxy http://pxcache-02.ensai.fr:3128
 ```
+( si cette config ne marche pas, verifiez ou se trouve votre bureau, s'il est dans C/Users/TEMP alors la bonne commande est : 
+cd /C/Users/TEMP/Desktop/git_repositories
+)
 Vous venez de configurer votre git pour le proxy et vous allez êtes maintenant dans le dépot git repositories
 ```git
 git clone https://github.com/HealerMikado/2019Ensai_complement-info_TP1.git squelette-TP1
@@ -62,10 +65,15 @@ Si vous utilisez PyCharm, après avoir récupérer le TP, faites
 File > Open > squelette-TP1 > Ok > This windows
 ```
 
-Dans le paneau de gauche l'arboréscence du dossier ainsi que son 
+Dans le panneau de gauche l'arboréscence du dossier ainsi que son 
 contenu devraient apparaitre.
 
+Ensuite configurez le proxy dans l'onglet file en haut a gauche, puis settings, puis proxy. Hôte: pxcache-02.ensai.fr Port: 3128
+Vous pourrez maintenant installer les libairies du tp. 
 
+Si l'interpréteur python est également signalé comme manquant, en cliquant sur la bulle d'information, vous pourrez ajouter (add) un environnement virtuel venv python depuis pycharm. Vous n'aurez qu'a valider celà. 
+
+Vous pouvez ensuite vous lancer sur le tp 
 ### Ecriture de données
 
 #### Utiliser AvengerDAO
